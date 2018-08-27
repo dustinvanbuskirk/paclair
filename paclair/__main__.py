@@ -178,7 +178,7 @@ def main():
             logger.error(error)
             sys.exit(3)
         except (OSError, IOError):
-            logger.error("Can't write in current directory")
+            logger.error("Can't write in directory: {}".format(args.output_dir))
             sys.exit(4)
 
 
