@@ -17,7 +17,6 @@ Installation
 To install Paclair, simply use `pip` (or pipenv):
 
 .. code-block:: bash
-
     $ pip install paclair
     ✨🍰✨
 
@@ -107,14 +106,12 @@ Running the tests
 Launch tox.
 
 .. code-block:: bash
-
     $ tox
 
 Usage
 -----
 
 .. code-block:: bash
-
     usage: paclair [-h] [--debug] [--syslog] [--conf CONF]
                    plugin hosts [hosts ...] {push,delete,analyse} ...
 
@@ -137,7 +134,6 @@ Analyse command usage
 ~~~~~~~~~~~~~~~~~~~~~
 
 .. code-block:: bash
-
     usage: paclair plugin hosts [hosts ...] analyse [-h]
                                                 [--output-format {stats,html}]
                                                 [--output-report {file,term}]
@@ -160,14 +156,12 @@ Examples
 Push ubuntu image to Clair
 
 .. code-block:: bash
-
     $ paclair --conf conf/conf.yml Docker ubuntu push
     Pushed ubuntu to Clair.
 
 Analyse ubuntu image
 
 .. code-block:: bash
-
     $ paclair --conf conf/conf.yml Docker ubuntu analyse --output-format stats
     Medium: 3
 
@@ -177,13 +171,11 @@ You can have the full json if you don't specify --output-format stats
 Analyse ubuntu image and get a html report in directory /tmp
 
 .. code-block:: bash
-
     $ paclair --conf conf/conf.yml Docker ubuntu analyse --output-format html --output-dir /tmp
 
 Delete ubuntu image
 
 .. code-block:: bash
-
     $ paclair --conf conf/conf.yml Docker ubuntu delete
     ubuntu was deleted from Clair.
 
