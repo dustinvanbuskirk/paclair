@@ -14,11 +14,11 @@ Features:
 Installation
 ------------
 
-To install Paclair, simply use `pipenv <http://pipenv.org/>`_ (or pip, of course):
+To install Paclair, simply use `pip` (or pipenv):
 
 .. code-block:: bash
 
-    $ pipenv install paclair
+    $ pip install paclair
     ✨🍰✨
 
 Voilà!
@@ -72,6 +72,10 @@ Options
 |                                   | If different from 3, will be set  |
 |                                   | to default.                       |
 |                                   | Default to 1.                     |
++-----------------------------------+-----------------------------------+
+| General::html_template            | Html template                     |
+|                                   | You can use a custom html template|
+|                                   | when using html output            |
 +-----------------------------------+-----------------------------------+
 | Plugins                           | List of plugins to use. If you    |
 |                                   | only want to analyse docker       |
@@ -129,6 +133,26 @@ Usage
       --syslog              Log to syslog
       --conf CONF           Conf file
 
+Analyse command usage
+~~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: bash
+
+    usage: paclair plugin hosts [hosts ...] analyse [-h]
+                                                [--output-format {stats,html}]
+                                                [--output-report {file,term}]
+                                                [--output-dir OUTPUT_DIR]
+                                                [--delete]
+
+    optional arguments:
+      -h, --help            show this help message and exit
+      --output-format {stats,html}
+                            Change default output format (default: json)
+      --output-report {file,term}
+                            Change report location (default: logger)
+      --output-dir OUTPUT_DIR
+                            Change output directory (default: current)
+      --delete              Delete after analyse
 
 Examples
 ~~~~~~~~
@@ -144,10 +168,17 @@ Analyse ubuntu image
 
 .. code-block:: bash
 
-    $ paclair --conf conf/conf.yml Docker ubuntu analyse --statistics
+    $ paclair --conf conf/conf.yml Docker ubuntu analyse --output-format stats
     Medium: 3
 
-You can have the full json if you don't specify --statistics
+You can have the full json if you don't specify --output-format stats
+
+
+Analyse ubuntu image and get a html report in directory /tmp
+
+.. code-block:: bash
+
+    $ paclair --conf conf/conf.yml Docker ubuntu analyse --output-format html --output-dir /tmp
 
 Delete ubuntu image
 
