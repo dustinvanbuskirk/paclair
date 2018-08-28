@@ -60,7 +60,7 @@ Options
 +-----------------------------------+-----------------------------------+
 | Config Option                     | Description                       |
 +===================================+===================================+
-| General::clair_url                | url of the Clair Server           |
+| General::clair_url                | url of the Clair Server.          |
 +-----------------------------------+-----------------------------------+
 | General::verify                   | Either a boolean, in which case   |
 |                                   | it controls whether we verify the |
@@ -68,25 +68,25 @@ Options
 |                                   | string, in which case it must be  |
 |                                   | a path to a CA bundle to use.     |
 +-----------------------------------+-----------------------------------+
-| General::clair_api_version        | Clair Api Version                 |
+| General::clair_api_version        | Clair Api Version.                |
 |                                   | If different from 3, will be set  |
 |                                   | to default.                       |
 |                                   | Default to 1.                     |
 +-----------------------------------+-----------------------------------+
-| General::html_template            | Html template                     |
+| General::html_template            | Html template.                    |
 |                                   | You can use a custom html template|
-|                                   | when using html output            |
+|                                   | when using html output.           |
 +-----------------------------------+-----------------------------------+
 | Plugins                           | List of plugins to use. If you    |
 |                                   | only want to analyse docker       |
 |                                   | images, keep the default          |
-|                                   | configuration                     |
+|                                   | configuration.                    |
 +-----------------------------------+-----------------------------------+
 | Plugins::Docker::class            | Class for the docker plugin       |
 +-----------------------------------+-----------------------------------+
 | Plugins::Docker::registries       | You can specify configuration for |
 |                                   | registries (authentification, …)  |
-|                                   | if needed                         |
+|                                   | if needed.                        |
 +-----------------------------------+-----------------------------------+
 | Plugins::Docker::registries::regi | login/password                    |
 | stry1::auth                       |                                   |
@@ -98,7 +98,7 @@ Options
 |                                   | a path to a CA bundle to use.     |
 +-----------------------------------+-----------------------------------+
 | Plugins::Docker::registries::regi | Protocol to use (http or https).  |
-| stry1::protocol                   | Default to https                  |
+| stry1::protocol                   | Default to https.                 |
 +-----------------------------------+-----------------------------------+
 
 Running the tests
